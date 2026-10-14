@@ -167,6 +167,13 @@ T["kotlin"]["works"] = function()
   validate(lines, { 7, 0 }, expected_lines, " aeip", "bar<cr>")
 end
 
+T["kotlin"]["explicit types generate a compilable function"] = function()
+  local lines = read_file "./tests/files/extract_func_typed_works_before.kt"
+  local expected_lines = read_file "./tests/files/extract_func_typed_works_after.kt"
+  child.cmd "edit tmp.kt"
+  validate(lines, { 7, 0 }, expected_lines, " aeip", "bar<cr>")
+end
+
 T["php"] = MiniTest.new_set {
   hooks = {
     pre_case = function()
