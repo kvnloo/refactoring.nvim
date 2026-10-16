@@ -22,6 +22,7 @@ deps:
 	git clone --filter=blob:none https://github.com/nvim-mini/mini.nvim deps/mini.nvim
 	git clone --filter=blob:none https://github.com/lewis6991/async.nvim deps/async.nvim
 	git clone --filter=blob:none https://github.com/mason-org/mason.nvim deps/mason.nvim
+	git clone --filter=blob:none https://github.com/neovim/nvim-lspconfig deps/nvim-lspconfig
 	git clone --branch main --filter=blob:none https://github.com/nvim-treesitter/nvim-treesitter deps/nvim-treesitter
 # TODO: remove the yq check (and tests/mason-registry) once Mason can install
 # kotlin-lsp: https://github.com/mason-org/mason-registry/pull/17323

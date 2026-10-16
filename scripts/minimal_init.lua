@@ -3,6 +3,7 @@ vim.cmd "set rtp+=."
 vim.cmd "set rtp+=deps/mini.nvim"
 vim.cmd "set rtp+=deps/async.nvim"
 vim.cmd "set rtp+=deps/mason.nvim"
+vim.cmd "set rtp+=deps/nvim-lspconfig"
 vim.cmd "set rtp+=deps/nvim-treesitter"
 
 require("mini.test").setup()
@@ -64,10 +65,9 @@ vim.lsp.config("pyright", {
     ".git",
   },
 })
+-- Use nvim-lspconfig\'s Kotlin launcher and filetypes instead of a
+-- dedicated TCP/multi-client test server (TheLeoP review of #552).
 vim.lsp.config("kotlin_lsp", {
-  -- NOTE: the tests connect to a shared server, see `tests/kotlin_lsp.lua`
-  cmd = require("tests.kotlin_lsp").cmd,
-  filetypes = { "kotlin" },
   root_markers = { "settings.gradle.kts" },
   -- NOTE: don't start it for Kotlin buffers outside `tests/files/kotlin_project`
   workspace_required = true,

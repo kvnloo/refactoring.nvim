@@ -155,9 +155,6 @@ end
 
 T["kotlin"] = MiniTest.new_set {
   hooks = {
-    pre_once = function()
-      require("tests.kotlin_lsp").start()
-    end,
     pre_case = function()
       child.lua [[
 vim.api.nvim_create_autocmd('Filetype', {
