@@ -65,7 +65,7 @@ vim.lsp.config("pyright", {
     ".git",
   },
 })
--- Use nvim-lspconfig\'s Kotlin launcher and filetypes instead of a
+-- Use nvim-lspconfig's Kotlin launcher and filetypes instead of a
 -- dedicated TCP/multi-client test server (TheLeoP review of #552).
 vim.lsp.config("kotlin_lsp", {
   root_markers = { "settings.gradle.kts" },
